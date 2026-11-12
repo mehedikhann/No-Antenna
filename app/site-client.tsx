@@ -71,13 +71,34 @@ export default function SiteClient() {
     setFormState("sending");
     setFormError("");
     try {
-      const response = await fetch("/api/inquiries", {
+      const fields = Object.fromEntries(new FormData(form).entries());
+      if (fields.website) {
+        form.reset();
+        setFormState("success");
+        return;
+      }
+      const response = await fetch("https://formsubmit.co/ajax/antennano@gmail.com", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(Object.fromEntries(new FormData(form).entries())),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: fields.name,
+          email: fields.email,
+          company: fields.company || "Not provided",
+          location: fields.market,
+          service: fields.service,
+          project_details: fields.brief,
+          preferred_date_time_and_time_zone: fields.availability,
+          _subject: "New No Antenna strategic discussion request",
+          _template: "table",
+          _captcha: "false",
+          _honey: "",
+          _url: window.location.href,
+        }),
       });
-      const result = await response.json() as { error?: string };
-      if (!response.ok) throw new Error(result.error || "The request could not be sent.");
+      const result = await response.json() as { success?: boolean | string; message?: string };
+      if (!response.ok || String(result.success) !== "true") {
+        throw new Error("The request could not be delivered. Please try again.");
+      }
       form.reset();
       setFormState("success");
     } catch (error) {
