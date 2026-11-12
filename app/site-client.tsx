@@ -97,7 +97,7 @@ export default function SiteClient() {
       });
       const result = await response.json() as { success?: boolean | string; message?: string };
       if (!response.ok || String(result.success) !== "true") {
-        throw new Error("The request could not be delivered. Please try again.");
+        throw new Error(typeof result.message === "string" ? result.message.slice(0, 200) : "The request could not be delivered. Please try again.");
       }
       form.reset();
       setFormState("success");
