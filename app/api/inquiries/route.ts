@@ -1,7 +1,4 @@
-import { getDb } from "../../../db";
-import { inquiries } from "../../../db/schema";
-
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 const allowedMarkets = new Set(["Bangladesh", "International"]);
 const allowedServices = new Set([
@@ -36,10 +33,47 @@ export async function POST(request: Request) {
     if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !allowedMarkets.has(market) || !allowedServices.has(service) || brief.length < 15 || !availability || !consent) {
       return Response.json({ error: "Please complete the required fields with a valid email address." }, { status: 400 });
     }
-    await getDb().insert(inquiries).values({ name, email, company, market, service, brief, availability });
+    const apiKey = process.env.RESEND_API_KEY;
+    const from = process.env.INQUIRY_FROM_EMAIL;
+    if (!apiKey || !from) {
+      return Response.json({ error: "Online requests are temporarily unavailable." }, { status: 503 });
+    }
+
+    const message = [
+      "New strategic discussion request",
+      "",
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Company: ${company || "Not provided"}`,
+      `Location: ${market}`,
+      `Service: ${service}`,
+      `Preferred time: ${availability}`,
+      "",
+      "Project details:",
+      brief,
+    ].join("\n");
+    const delivery = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from,
+        to: ["contact@noantenna.com"],
+        reply_to: email,
+        subject: `Strategic discussion request from ${name}`,
+        text: message,
+      }),
+      signal: AbortSignal.timeout(10000),
+    });
+    if (!delivery.ok) {
+      console.error("Inquiry email delivery failed", delivery.status);
+      return Response.json({ error: "The request could not be delivered." }, { status: 502 });
+    }
     return Response.json({ ok: true }, { status: 201 });
   } catch (error) {
-    console.error("Inquiry submission failed", error);
-    return Response.json({ error: "The request could not be saved. Please email us instead." }, { status: 500 });
+    console.error("Inquiry submission failed", error instanceof Error ? error.name : "Unknown error");
+    return Response.json({ error: "The request could not be delivered." }, { status: 500 });
   }
 }
