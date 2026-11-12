@@ -30,18 +30,17 @@ export default function SiteClient() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || sessionStorage.getItem("no-antenna-intro-seen")) {
-      setIntroStage("done");
-      return;
-    }
-    const exitTimer = window.setTimeout(() => setIntroStage("exiting"), 1150);
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const exitTimer = window.setTimeout(() => setIntroStage("exiting"), 15000);
     const doneTimer = window.setTimeout(() => {
       setIntroStage("done");
-      sessionStorage.setItem("no-antenna-intro-seen", "yes");
-    }, 1750);
+      document.body.style.overflow = previousOverflow;
+    }, 15500);
     return () => {
       window.clearTimeout(exitTimer);
       window.clearTimeout(doneTimer);
+      document.body.style.overflow = previousOverflow;
     };
   }, []);
 
@@ -90,12 +89,13 @@ export default function SiteClient() {
   return (
     <>
       {introStage !== "done" && (
-        <div className={"site-intro " + (introStage === "exiting" ? "is-exiting" : "")} role="status" aria-label="No Antenna is loading">
+        <div className={"site-intro " + (introStage === "exiting" ? "is-exiting" : "")} role="status" aria-label="No Antenna introduction">
           <div className="intro-content">
             <p className="intro-overline caption-3">NO ANTENNA / DIGITAL PRODUCTS</p>
             <div className="intro-mark"><img src="/no-antenna-mark-white.png" alt="" /></div>
             <p className="intro-message heading-6">Thinking clearly. Building well.</p>
             <div className="intro-sequence caption-3" aria-hidden="true"><span>UNDERSTAND</span><span>SHAPE</span><span>BUILD</span></div>
+            <div className="intro-progress" aria-hidden="true"><span /></div>
           </div>
         </div>
       )}
