@@ -32,11 +32,11 @@ export default function SiteClient() {
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    const exitTimer = window.setTimeout(() => setIntroStage("exiting"), 8000);
+    const exitTimer = window.setTimeout(() => setIntroStage("exiting"), 4250);
     const doneTimer = window.setTimeout(() => {
       setIntroStage("done");
       document.body.style.overflow = previousOverflow;
-    }, 8500);
+    }, 5000);
     return () => {
       window.clearTimeout(exitTimer);
       window.clearTimeout(doneTimer);
