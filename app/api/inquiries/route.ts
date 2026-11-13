@@ -2,10 +2,10 @@ export const runtime = "nodejs";
 
 const allowedMarkets = new Set(["Bangladesh", "International"]);
 const allowedServices = new Set([
-  "Custom software development",
-  "SaaS product development",
+  "Custom Software Development",
+  "SaaS Product Development",
   "Premium Website Development",
-  "Web and mobile applications",
+  "Web & Mobile Apps Development",
   "Game Development",
   "Animated Content Development",
   "Not sure yet",
