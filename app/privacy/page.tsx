@@ -5,7 +5,7 @@ export const metadata = { title: "Privacy | No Antenna" };
 export default function Privacy() {
   return <main className="legal-page">
     <div className="container">
-      <Link className="legal-back button-md" href="/">← Back to No Antenna</Link>
+      <Link className="legal-back button-md" href="/">Back to No Antenna</Link>
       <p className="section-label caption-3">NO ANTENNA / PRIVACY</p>
       <h1 className="heading-2">Privacy notice</h1>
       <p className="body-3">When you request a strategic discussion, we collect the information you enter: your name, email, company, location category, service interest, project description, and preferred time. We use it to review your inquiry and respond to you.</p>
