@@ -4,7 +4,10 @@ const allowedMarkets = new Set(["Bangladesh", "International"]);
 const allowedServices = new Set([
   "Custom software development",
   "SaaS product development",
+  "Premium Website Development",
   "Web and mobile applications",
+  "Game Development",
+  "Animated Content Development",
   "Not sure yet",
 ]);
 
