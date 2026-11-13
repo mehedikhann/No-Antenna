@@ -60,6 +60,42 @@ export default function SiteClient() {
   }, []);
 
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const section = document.querySelector<HTMLElement>(".statement-section");
+    const mark = section?.querySelector<HTMLElement>(".statement-mark");
+    const words = Array.from(section?.querySelectorAll<HTMLElement>(".statement-word") ?? []);
+    if (!section || !mark || !words.length) return;
+
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const rect = section.getBoundingClientRect();
+      const travel = window.innerHeight * .82 + rect.height * .65;
+      const progress = Math.max(0, Math.min(1, (window.innerHeight * .82 - rect.top) / travel));
+      section.classList.add("is-scroll-animated");
+      words.forEach((word, index) => {
+        const reveal = Math.max(0, Math.min(1, (progress - index / words.length * .68) / .32));
+        word.style.setProperty("--word-opacity", String(.58 + reveal * .42));
+        word.style.setProperty("--word-shift", `${(1 - reveal) * 8}px`);
+      });
+      mark.style.setProperty("--mark-opacity", String(.35 + progress * .65));
+      mark.style.setProperty("--mark-shift", `${36 - progress * 72}px`);
+      mark.style.setProperty("--mark-turn", `${-8 + progress * 8}deg`);
+      mark.style.setProperty("--mark-scale", String(.84 + progress * .16));
+      mark.style.setProperty("--ring-turn", `${progress * 280}deg`);
+    };
+    const schedule = () => { if (!frame) frame = window.requestAnimationFrame(update); };
+    update();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    return () => {
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, []);
+
+  useEffect(() => {
     const close = (event: KeyboardEvent) => { if (event.key === "Escape") setMenuOpen(false); };
     window.addEventListener("keydown", close);
     return () => window.removeEventListener("keydown", close);
@@ -202,7 +238,14 @@ export default function SiteClient() {
         </section>
 
         <section className="statement-section light-section" aria-label="Our point of view">
-          <div className="container statement-inner" data-reveal><p className="section-label caption-3">A SIMPLE PRINCIPLE</p><p className="heading-3 statement-copy">{statement.split(" ").map((word, i) => <span className="statement-word" key={i} style={{ transitionDelay: (i * 65) + "ms" }}>{word} </span>)}</p><div className="statement-rule"><span>CLARITY BEFORE CODE</span><span>NO ANTENNA</span></div></div>
+          <div className="container statement-inner" data-reveal>
+            <p className="section-label caption-3">A SIMPLE PRINCIPLE</p>
+            <div className="statement-content">
+              <p className="heading-3 statement-copy">{statement.split(" ").map((word, i) => <span className="statement-word" key={i}>{word} </span>)}</p>
+              <div className="statement-mark" aria-hidden="true"><span className="statement-ring" /><img src="/no-antenna-mark.png" alt="" /></div>
+            </div>
+            <div className="statement-rule"><span>CLARITY BEFORE CODE</span><span>NO ANTENNA</span></div>
+          </div>
         </section>
 
         <section className="approach-section" id="approach" aria-labelledby="approach-heading">
