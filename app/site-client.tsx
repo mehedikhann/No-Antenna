@@ -4,10 +4,10 @@ import { FormEvent, useEffect, useState } from "react";
 import { BracketsCurly, FacebookLogo, LightbulbFilament, LinkedinLogo } from "@phosphor-icons/react";
 
 const services = [
-  ["01", "Custom software development", "Purpose built systems shaped around your operations, workflows, and growth plans.", "Internal platforms · Business tools · Integrations"],
-  ["02", "SaaS product development", "Turn a product idea into a usable platform with a clear path for iteration.", "Product planning · MVPs · Subscription platforms"],
+  ["01", "Custom Software Development", "Purpose built systems shaped around your operations, workflows, and growth plans.", "Internal platforms · Business tools · Integrations"],
+  ["02", "SaaS Product Development", "Turn a product idea into a usable platform with a clear path for iteration.", "Product planning · MVPs · Subscription platforms"],
   ["03", "Premium Website Development", "Distinctive, responsive websites that explain your value and make the next step obvious.", "Corporate sites · Marketing sites · Web experiences"],
-  ["04", "Web and mobile applications", "Connected experiences for customers, teams, and the work between them.", "Web apps · Mobile apps · Portals"],
+  ["04", "Web & Mobile Apps Development", "Connected experiences for customers, teams, and the work between them.", "Web apps · Mobile apps · Portals"],
   ["05", "Game Development", "Interactive games shaped around engaging mechanics, clear design, and the people who play them.", "Concepts · Prototypes · Production"],
   ["06", "Animated Content Development", "Animated content that explains products, tells stories, and brings ideas to life.", "Explainers · Brand motion · Digital content"],
 ];
