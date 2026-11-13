@@ -6,12 +6,14 @@ import { BracketsCurly, FacebookLogo, LightbulbFilament, LinkedinLogo } from "@p
 const services = [
   ["01", "Custom software development", "Purpose built systems shaped around your operations, workflows, and growth plans.", "Internal platforms · Business tools · Integrations"],
   ["02", "SaaS product development", "Turn a product idea into a usable platform with a clear path for iteration.", "Product planning · MVPs · Subscription platforms"],
-  ["03", "Premium websites", "Distinctive, responsive websites that explain your value and make the next step obvious.", "Corporate sites · Marketing sites · Web experiences"],
+  ["03", "Premium Website Development", "Distinctive, responsive websites that explain your value and make the next step obvious.", "Corporate sites · Marketing sites · Web experiences"],
   ["04", "Web and mobile applications", "Connected experiences for customers, teams, and the work between them.", "Web apps · Mobile apps · Portals"],
+  ["05", "Game Development", "Interactive games shaped around engaging mechanics, clear design, and the people who play them.", "Concepts · Prototypes · Production"],
+  ["06", "Animated Content Development", "Animated content that explains products, tells stories, and brings ideas to life.", "Explainers · Brand motion · Digital content"],
 ];
 
 const faqs = [
-  ["What kind of projects can we discuss?", "We work across custom software, SaaS products, premium websites, and web or mobile applications. If your idea crosses more than one category, share the full context in your request."],
+  ["What kind of projects can we discuss?", "We work across custom software, SaaS products, premium website development, web and mobile applications, game development, and animated content. If your idea crosses more than one category, share the full context in your request."],
   ["Can you work with a team outside Bangladesh?", "Yes. No Antenna is open to projects from businesses in Bangladesh and international markets. We can discuss a practical communication rhythm for your location and time zone."],
   ["Do I need a complete specification?", "No. A clear business problem or product idea is enough to begin. We can use the first discussion to understand the goal, users, scope, and immediate decisions."],
   ["How do you determine scope and pricing?", "We review your objectives, required features, integrations, design needs, and timeline. A proposal and commercial terms can follow once the scope is understood."],
@@ -142,7 +144,7 @@ export default function SiteClient() {
             <div className="hero-copy" data-reveal>
               <p className="eyebrow caption-1"><span className="status-dot" /> DIGITAL PRODUCTS, BUILT WITH PURPOSE</p>
               <h1 className="heading-1">Your next idea deserves <span>a stronger build.</span></h1>
-              <p className="body-3 hero-description">No Antenna develops custom software, SaaS products, premium websites, and web and mobile apps for businesses in Bangladesh and beyond.</p>
+              <p className="body-3 hero-description">No Antenna develops custom software, SaaS products, premium websites, web and mobile apps, games, and animated content for businesses in Bangladesh and beyond.</p>
               <a className="primary-button button-md" href="#discussion">Book a strategic discussion</a>
               <p className="hero-note caption-2">Tell us what you are building. We will start with the right questions.</p>
             </div>
@@ -177,9 +179,9 @@ export default function SiteClient() {
         </section>
 
         <section className="services-section" id="services" aria-labelledby="services-heading">
-          <div className="container"><div className="section-header" data-reveal><div className="section-identity"><span className="section-icon build-icon" aria-hidden="true"><BracketsCurly size={32} weight="duotone" /></span><p className="section-label caption-3">02 / WHAT WE BUILD</p></div><div><h2 id="services-heading" className="heading-2">The right product for<br />the work ahead.</h2><p className="body-3">Four focused capabilities, connected by one idea: software should make a meaningful difference to the people using it.</p></div></div>
+          <div className="container"><div className="section-header" data-reveal><div className="section-identity"><span className="section-icon build-icon" aria-hidden="true"><BracketsCurly size={32} weight="duotone" /></span><p className="section-label caption-3">02 / WHAT WE BUILD</p></div><div><h2 id="services-heading" className="heading-2">The right product for<br />the work ahead.</h2><p className="body-3">Six focused services, connected by one idea: the work should make a meaningful difference to the people using it.</p></div></div>
             <div className="service-grid">{services.map(([number, title, description, detail]) => (
-              <article className="service-card" key={number} data-reveal><div className="service-top"><span className="caption-3">{number} / CAPABILITY</span></div><div><h3 className="heading-5">{title}</h3><p className="body-3">{description}</p></div><span className="service-detail caption-2">{detail}</span></article>
+              <article className="service-card" key={number} data-reveal><div className="service-top"><span className="caption-3">{number}</span></div><div><h3 className="heading-5">{title}</h3><p className="body-3">{description}</p></div><span className="service-detail caption-2">{detail}</span></article>
             ))}</div>
           </div>
         </section>
