@@ -5,7 +5,7 @@ export const metadata = { title: "Terms | No Antenna" };
 export default function Terms() {
   return <main className="legal-page">
     <div className="container">
-      <Link className="legal-back button-md" href="/">← Back to No Antenna</Link>
+      <Link className="legal-back button-md" href="/">Back to No Antenna</Link>
       <p className="section-label caption-3">NO ANTENNA / TERMS</p>
       <h1 className="heading-2">Website terms</h1>
       <p className="body-3">The content on this website introduces No Antenna and its services. It is general information and does not create a project agreement, price, delivery commitment, or booking confirmation.</p>
