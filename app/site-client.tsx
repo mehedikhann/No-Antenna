@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
-import { BracketsCurly, LightbulbFilament } from "@phosphor-icons/react";
+import { BracketsCurly, FacebookLogo, LightbulbFilament, LinkedinLogo } from "@phosphor-icons/react";
 
 const services = [
   ["01", "Custom software development", "Purpose built systems shaped around your operations, workflows, and growth plans.", "Internal platforms · Business tools · Integrations"],
@@ -20,7 +20,6 @@ const faqs = [
 ];
 
 const statement = "Good software starts with a clear understanding of what your business needs to do next.";
-const Arrow = () => <span className="arrow" aria-hidden="true">↗</span>;
 
 export default function SiteClient() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -125,14 +124,14 @@ export default function SiteClient() {
         <nav className="nav-shell" aria-label="Main navigation">
           <a className="brand" href="#top" aria-label="No Antenna home" onClick={() => setMenuOpen(false)}><img src="/no-antenna-wordmark.png" alt="No Antenna" /></a>
           <div className="desktop-links"><a href="#services">Services</a><a href="#product">Our product</a><a href="#approach">Approach</a><a href="#about">About</a><a href="#faq">FAQ</a></div>
-          <a className="nav-cta button-sm" href="#discussion">Book a discussion <Arrow /></a>
+          <a className="nav-cta button-sm" href="#discussion">Book a discussion</a>
           <button className={"menu-toggle " + (menuOpen ? "is-open" : "")} type="button" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} aria-controls="mobile-menu" onClick={() => setMenuOpen(!menuOpen)}><span /><span /></button>
         </nav>
       </header>
       <div className={"mobile-panel " + (menuOpen ? "is-open" : "")} id="mobile-menu" aria-hidden={!menuOpen}>
         <nav aria-label="Mobile navigation">
           {[["Services", "#services"], ["Our product", "#product"], ["Approach", "#approach"], ["About", "#about"], ["FAQ", "#faq"], ["Book a discussion", "#discussion"]].map(([label, href], index) => (
-            <a key={href} href={href} style={{ transitionDelay: menuOpen ? (index * 60) + "ms" : "0ms" }} onClick={() => setMenuOpen(false)} tabIndex={menuOpen ? 0 : -1}>{label}<Arrow /></a>
+            <a key={href} href={href} style={{ transitionDelay: menuOpen ? (index * 60) + "ms" : "0ms" }} onClick={() => setMenuOpen(false)} tabIndex={menuOpen ? 0 : -1}>{label}</a>
           ))}
         </nav>
       </div>
@@ -144,7 +143,7 @@ export default function SiteClient() {
               <p className="eyebrow caption-1"><span className="status-dot" /> DIGITAL PRODUCTS, BUILT WITH PURPOSE</p>
               <h1 className="heading-1">Your next idea deserves <span>a stronger build.</span></h1>
               <p className="body-3 hero-description">No Antenna develops custom software, SaaS products, premium websites, and web and mobile apps for businesses in Bangladesh and beyond.</p>
-              <a className="primary-button button-md" href="#discussion">Book a strategic discussion <Arrow /></a>
+              <a className="primary-button button-md" href="#discussion">Book a strategic discussion</a>
               <p className="hero-note caption-2">Tell us what you are building. We will start with the right questions.</p>
             </div>
             <div className="hero-art" role="img" aria-label="Animated illustration of code becoming a useful digital product" data-reveal>
@@ -165,7 +164,7 @@ export default function SiteClient() {
                   </div>
                 </div>
                 <div className="art-steps"><div><span>01</span><strong>Understand</strong><small>Business and users</small></div><div><span>02</span><strong>Shape</strong><small>Scope and priorities</small></div><div><span>03</span><strong>Build</strong><small>Product and launch</small></div></div>
-                <div className="art-bottom"><span>Strategy first. Thoughtful execution.</span><Arrow /></div>
+                <div className="art-bottom"><span>Strategy first. Thoughtful execution.</span></div>
               </div>
               <span className="art-caption caption-5">A simple view of how every project begins.</span>
             </div>
@@ -180,22 +179,22 @@ export default function SiteClient() {
         <section className="services-section" id="services" aria-labelledby="services-heading">
           <div className="container"><div className="section-header" data-reveal><div className="section-identity"><span className="section-icon build-icon" aria-hidden="true"><BracketsCurly size={32} weight="duotone" /></span><p className="section-label caption-3">02 / WHAT WE BUILD</p></div><div><h2 id="services-heading" className="heading-2">The right product for<br />the work ahead.</h2><p className="body-3">Four focused capabilities, connected by one idea: software should make a meaningful difference to the people using it.</p></div></div>
             <div className="service-grid">{services.map(([number, title, description, detail]) => (
-              <article className="service-card" key={number} data-reveal><div className="service-top"><span className="caption-3">{number} / CAPABILITY</span><Arrow /></div><div><h3 className="heading-5">{title}</h3><p className="body-3">{description}</p></div><span className="service-detail caption-2">{detail}</span></article>
+              <article className="service-card" key={number} data-reveal><div className="service-top"><span className="caption-3">{number} / CAPABILITY</span></div><div><h3 className="heading-5">{title}</h3><p className="body-3">{description}</p></div><span className="service-detail caption-2">{detail}</span></article>
             ))}</div>
           </div>
         </section>
 
         <section className="product-section" id="product" aria-labelledby="product-heading">
           <div className="container product-grid">
-            <div className="product-copy" data-reveal><p className="section-label caption-3">03 / OUR PRODUCT</p><p className="product-tag caption-3">FROM NO ANTENNA</p><h2 id="product-heading" className="heading-2">Meet Athlo Club.</h2><p className="body-3">Our sports platform brings players and venues closer to the game. It is one example of how we turn a focused idea into a digital product of our own.</p><a className="product-link button-md" href="https://www.athlo.club/" target="_blank" rel="noopener noreferrer">Explore Athlo Club <Arrow /></a></div>
+            <div className="product-copy" data-reveal><p className="section-label caption-3">03 / OUR PRODUCT</p><p className="product-tag caption-3">FROM NO ANTENNA</p><h2 id="product-heading" className="heading-2">Meet Athlo Club.</h2><p className="body-3">Our sports platform brings players and venues closer to the game. It is one example of how we turn a focused idea into a digital product of our own.</p><a className="product-link button-md" href="https://www.athlo.club/" target="_blank" rel="noopener noreferrer">Explore Athlo Club</a></div>
             <div className="product-visual" data-reveal>
               <span className="caption-3">FEATURED PRODUCT / 001</span>
               <a className="athlo-feature" href="https://www.athlo.club/" target="_blank" rel="noopener noreferrer" aria-label="Visit www.athlo.club">
                 <span className="athlo-motion-ring" aria-hidden="true" />
                 <span className="athlo-logo-card"><img src="/athlo-club-logo.png" alt="Athlo Club, The Game is Always On" /></span>
-                <span className="athlo-address button-md">www.athlo.club <Arrow /></span>
+                <span className="athlo-address button-md">www.athlo.club</span>
               </a>
-              <div className="product-visual-footer"><span>ATHLO CLUB · THE GAME IS ALWAYS ON</span><Arrow /></div>
+              <div className="product-visual-footer"><span>ATHLO CLUB · THE GAME IS ALWAYS ON</span></div>
             </div>
           </div>
         </section>
@@ -215,7 +214,7 @@ export default function SiteClient() {
         </section>
 
         <section className="about-section light-section" id="about" aria-labelledby="about-heading">
-          <div className="container about-grid"><div className="about-visual" data-reveal><span className="about-visual-label caption-3">A BUSINESS FIRST MINDSET</span><div className="decision-map"><div className="decision-point"><span className="decision-index">01</span><div><strong>Understand the challenge</strong><small>What needs to change, and for whom?</small></div></div><div className="decision-point"><span className="decision-index">02</span><div><strong>Choose the priorities</strong><small>What will create value first?</small></div></div><div className="decision-point"><span className="decision-index">03</span><div><strong>Build the right thing</strong><small>What can the team use and grow?</small></div></div></div><span className="about-visual-bottom caption-3">THINK CLEARLY. BUILD WELL.</span></div><div className="about-copy" data-reveal><p className="section-label caption-3">05 / WHO WE ARE</p><h2 id="about-heading" className="heading-2">A technology partner that starts with your business.</h2><p className="body-3">No Antenna is a software development company serving local and international clients. We bring product thinking to custom development, SaaS, websites, and applications so the work begins with a clear purpose.</p><a href="#discussion" className="text-link button-md">Start a conversation <Arrow /></a></div></div>
+          <div className="container about-grid"><div className="about-visual" data-reveal><span className="about-visual-label caption-3">A BUSINESS FIRST MINDSET</span><div className="decision-map"><div className="decision-point"><span className="decision-index">01</span><div><strong>Understand the challenge</strong><small>What needs to change, and for whom?</small></div></div><div className="decision-point"><span className="decision-index">02</span><div><strong>Choose the priorities</strong><small>What will create value first?</small></div></div><div className="decision-point"><span className="decision-index">03</span><div><strong>Build the right thing</strong><small>What can the team use and grow?</small></div></div></div><span className="about-visual-bottom caption-3">THINK CLEARLY. BUILD WELL.</span></div><div className="about-copy" data-reveal><p className="section-label caption-3">05 / WHO WE ARE</p><h2 id="about-heading" className="heading-2">A technology partner that starts with your business.</h2><p className="body-3">No Antenna is a software development company serving local and international clients. We bring product thinking to custom development, SaaS, websites, and applications so the work begins with a clear purpose.</p><a href="#discussion" className="text-link button-md">Start a conversation</a></div></div>
         </section>
 
         <section className="faq-section" id="faq" aria-labelledby="faq-heading">
@@ -223,9 +222,9 @@ export default function SiteClient() {
         </section>
 
         <section className="discussion-section light-section" id="discussion" aria-labelledby="discussion-heading">
-          <div className="container discussion-grid"><div className="discussion-copy" data-reveal><p className="section-label caption-3">07 / LET US TALK</p><h2 id="discussion-heading" className="heading-2">Let us make the first conversation count.</h2><p className="body-3">Tell us what you want to build or improve. Share a preferred time, and we will follow up to confirm the discussion by email.</p><div className="contact-box"><span className="caption-3">PREFER EMAIL?</span><a className="title-2" href="mailto:contact@noantenna.com">contact@noantenna.com <Arrow /></a></div></div>
+          <div className="container discussion-grid"><div className="discussion-copy" data-reveal><p className="section-label caption-3">07 / LET US TALK</p><h2 id="discussion-heading" className="heading-2">Let us make the first conversation count.</h2><p className="body-3">Tell us what you want to build or improve. Share a preferred time, and we will follow up to confirm the discussion by email.</p><div className="contact-box"><span className="caption-3">PREFER EMAIL?</span><a className="title-2" href="mailto:contact@noantenna.com">contact@noantenna.com</a></div></div>
             <div className="form-card" data-reveal><div className="form-heading"><span className="caption-3">STRATEGIC DISCUSSION</span><h3 className="heading-5">Request a time to talk.</h3><p className="body-6">A requested time is confirmed only when we reply by email.</p></div>
-              {formState === "success" ? <div className="form-success" role="status"><span className="success-mark">✓</span><h4 className="heading-6">Your request was sent.</h4><p className="body-3">Thank you. We will review the details and contact you by email to confirm a time.</p><button type="button" className="text-link button-md" onClick={() => setFormState("idle")}>Send another request <Arrow /></button></div> : <form onSubmit={submitInquiry}>
+              {formState === "success" ? <div className="form-success" role="status"><span className="success-mark">✓</span><h4 className="heading-6">Your request was sent.</h4><p className="body-3">Thank you. We will review the details and contact you by email to confirm a time.</p><button type="button" className="text-link button-md" onClick={() => setFormState("idle")}>Send another request</button></div> : <form onSubmit={submitInquiry}>
                 <div className="form-row"><label className="form-field"><span className="body-4">Your name *</span><input name="name" type="text" autoComplete="name" maxLength={100} required placeholder="Your full name" /></label><label className="form-field"><span className="body-4">Work email *</span><input name="email" type="email" autoComplete="email" maxLength={160} required placeholder="you@company.com" /></label></div>
                 <div className="form-row"><label className="form-field"><span className="body-4">Company</span><input name="company" type="text" autoComplete="organization" maxLength={120} placeholder="Company or project name" /></label><label className="form-field"><span className="body-4">Location *</span><select name="market" defaultValue="" required><option value="" disabled>Select a location</option><option value="Bangladesh">Bangladesh</option><option value="International">Outside Bangladesh</option></select></label></div>
                 <label className="form-field"><span className="body-4">What are you planning? *</span><select name="service" defaultValue="" required><option value="" disabled>Select a service</option>{services.map((service) => <option key={service[0]} value={service[1]}>{service[1]}</option>)}<option value="Not sure yet">Not sure yet</option></select></label>
@@ -234,13 +233,13 @@ export default function SiteClient() {
                 <label className="consent-field body-6"><input type="checkbox" name="consent" value="yes" required /><span>I agree that No Antenna may use these details to respond to my inquiry. See the <a href="/privacy">privacy notice</a>.</span></label>
                 <div className="honeypot" aria-hidden="true"><label>Website <input name="website" type="text" tabIndex={-1} autoComplete="off" /></label></div>
                 {formState === "error" && <p className="form-error body-6" role="alert">{formError} You can also email <a href="mailto:contact@noantenna.com">contact@noantenna.com</a>.</p>}
-                <button className="primary-button button-md form-button" type="submit" disabled={formState === "sending"}>{formState === "sending" ? "Sending request…" : "Request a discussion"}<Arrow /></button>
+                <button className="primary-button button-md form-button" type="submit" disabled={formState === "sending"}>{formState === "sending" ? "Sending request…" : "Request a discussion"}</button>
               </form>}
             </div>
           </div>
         </section>
       </main>
-      <footer className="site-footer"><div className="container footer-top"><div><a className="footer-brand" href="#top" aria-label="No Antenna home"><img src="/no-antenna-wordmark.png" alt="No Antenna" /></a><p className="body-6">Software built for what comes next.</p></div><a className="footer-email title-2" href="mailto:contact@noantenna.com">contact@noantenna.com <Arrow /></a></div><div className="container footer-bottom caption-5"><span>© 2026 No Antenna</span><span>Bangladesh · Working globally</span><div><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="#top">Back to top ↑</a></div></div></footer>
+      <footer className="site-footer"><div className="container footer-top"><div><a className="footer-brand" href="#top" aria-label="No Antenna home"><img src="/no-antenna-wordmark.png" alt="No Antenna" /></a><p className="body-6">Software built for what comes next.</p></div><div className="footer-contact"><a className="footer-email title-2" href="mailto:contact@noantenna.com">contact@noantenna.com</a><nav className="footer-social" aria-label="Social media"><a href="https://web.facebook.com/noantenna1/" target="_blank" rel="noopener noreferrer"><FacebookLogo size={20} weight="fill" aria-hidden="true" />Facebook</a><a href="https://www.linkedin.com/company/noantenna/" target="_blank" rel="noopener noreferrer"><LinkedinLogo size={20} weight="fill" aria-hidden="true" />LinkedIn</a></nav></div></div><div className="container footer-bottom caption-5"><span>© 2026 No Antenna</span><span>Bangladesh · Working globally</span><div><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="#top">Back to top</a></div></div></footer>
     </>
   );
 }
