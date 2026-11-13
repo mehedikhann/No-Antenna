@@ -116,7 +116,7 @@ img { max-width: 100%; display: block; }
 
 .statement-section { padding: 96px 0; }.statement-inner { max-width: 1000px; }
 .statement-content { display: grid; grid-template-columns: minmax(0, 680px) minmax(190px, 1fr); align-items: center; gap: 40px; }
-.statement-copy { max-width: 680px; margin: 64px 0 80px; }.statement-word { display: inline-block; color: var(--navy); }
+.statement-copy { max-width: 680px; margin: 64px 0 80px; }.statement-word { display: inline-block; margin-right: .24em; color: var(--navy); }
 .statement-section.is-scroll-animated .statement-word { opacity: var(--word-opacity, 1); transform: translateY(var(--word-shift, 0px)); }
 .statement-mark { position: relative; width: min(100%, 260px); aspect-ratio: 1; justify-self: end; display: grid; place-items: center; }
 .statement-mark img { width: 78%; position: relative; z-index: 1; }
