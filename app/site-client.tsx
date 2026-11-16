@@ -19,7 +19,7 @@ const technologyGroups = [
   },
   {
     number: "02", title: "Backend & SaaS", detail: "Application logic, data, and dependable delivery",
-    tools: [["Node.js", "nodedotjs"], ["Laravel", "laravel"], ["Python", "python"], ["PostgreSQL", "postgresql"], ["Docker", "docker"]],
+    tools: [["Node.js", "nodedotjs"], ["Laravel", "laravel"], ["Python", "python"], ["Java", "java"], [".NET", "dotnet"], ["PostgreSQL", "postgresql"], ["Docker", "docker"]],
   },
   {
     number: "03", title: "Mobile applications", detail: "Cross-platform and native app foundations",
@@ -27,7 +27,7 @@ const technologyGroups = [
   },
   {
     number: "04", title: "Games & animation", detail: "Interactive worlds, real-time visuals, and motion",
-    tools: [["Unity", "unity"], ["Unreal Engine", "unrealengine"], ["Blender", "blender"], ["Rive", "rive"]],
+    tools: [["Unity", "unity"], ["Unreal Engine", "unrealengine"], ["Blender", "blender"], ["Rive", "rive"], ["Autodesk Maya", "autodeskmaya"], ["Autodesk 3ds Max", "threedsmax"], ["Adobe Creative Cloud", "creative-tools"]],
   },
 ];
 
