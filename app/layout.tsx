@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import WhatsAppWidget from "./whatsapp-widget";
 
 export const metadata: Metadata = {
   title: "No Antenna | Custom Software, SaaS, Websites and Apps",
@@ -23,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">{children}<WhatsAppWidget /></body>
     </html>
   );
 }

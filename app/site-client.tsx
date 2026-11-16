@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
-import { BracketsCurly, FacebookLogo, LightbulbFilament, LinkedinLogo } from "@phosphor-icons/react";
+import { BracketsCurly, FacebookLogo, InstagramLogo, LightbulbFilament, LinkedinLogo } from "@phosphor-icons/react";
 
 const services = [
   ["01", "Custom Software Development", "Purpose built systems shaped around your operations, workflows, and growth plans.", "Internal platforms · Business tools · Integrations"],
@@ -298,7 +298,7 @@ export default function SiteClient() {
           </div>
         </section>
       </main>
-      <footer className="site-footer"><div className="container footer-top"><div><a className="footer-brand" href="#top" aria-label="No Antenna home"><img src="/no-antenna-wordmark.png" alt="No Antenna" /></a><p className="body-6">Software built for what comes next.</p></div><div className="footer-contact"><a className="footer-email title-2" href="mailto:contact@noantenna.com">contact@noantenna.com</a><nav className="footer-social" aria-label="Social media"><a href="https://web.facebook.com/noantenna1/" target="_blank" rel="noopener noreferrer"><FacebookLogo size={20} weight="fill" aria-hidden="true" />Facebook</a><a href="https://www.linkedin.com/company/noantenna/" target="_blank" rel="noopener noreferrer"><LinkedinLogo size={20} weight="fill" aria-hidden="true" />LinkedIn</a></nav></div></div><div className="container footer-bottom caption-5"><span>© 2026 No Antenna</span><span>Bangladesh · Working globally</span><div><a href="/blog">Blog</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="#top">Back to top</a></div></div></footer>
+      <footer className="site-footer"><div className="container footer-top"><div><a className="footer-brand" href="#top" aria-label="No Antenna home"><img src="/no-antenna-wordmark.png" alt="No Antenna" /></a><p className="body-6">Software built for what comes next.</p></div><div className="footer-contact"><a className="footer-email title-2" href="mailto:contact@noantenna.com">contact@noantenna.com</a><nav className="footer-social" aria-label="Social media"><a href="https://web.facebook.com/noantenna1/" target="_blank" rel="noopener noreferrer"><FacebookLogo size={20} weight="fill" aria-hidden="true" />Facebook</a><a href="https://www.linkedin.com/company/noantenna/" target="_blank" rel="noopener noreferrer"><LinkedinLogo size={20} weight="fill" aria-hidden="true" />LinkedIn</a><a href="https://www.instagram.com/no.antenna" target="_blank" rel="noopener noreferrer"><InstagramLogo size={20} weight="regular" aria-hidden="true" />Instagram</a></nav></div></div><div className="container footer-bottom caption-5"><span>© 2026 No Antenna</span><span>Bangladesh · Working globally</span><div><a href="/blog">Blog</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="#top">Back to top</a></div></div></footer>
     </>
   );
 }
