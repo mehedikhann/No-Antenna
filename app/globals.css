@@ -97,6 +97,33 @@ img { max-width: 100%; display: block; }
 .section-header { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; margin-bottom: 48px; }
 .section-header h2 { margin: 0 0 24px; }.section-header p.body-3 { max-width: 550px; color: var(--muted); margin: 0; }
 .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+/* The stack is a guide to technology choices, not a fixed recipe. */
+.technology-section { padding: 96px 0; background: #e8efea; color: #183331; }
+.technology-heading { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; margin-bottom: 44px; }
+.technology-heading .section-label { color: #087e73; }
+.technology-heading h2 { margin: 0 0 22px; }
+.technology-heading .body-3 { max-width: 650px; margin: 0; color: #50635c; }
+.technology-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.technology-card { min-width: 0; padding: 30px; border: 1px solid #ccdcd2; border-radius: 18px; background: #fbfcfa; box-shadow: 0 12px 36px rgb(24 51 49 / 4%); transition: border-color 400ms var(--curve), box-shadow 400ms var(--curve), translate 400ms var(--curve); }
+.technology-card:hover { border-color: #a3cec0; box-shadow: 0 20px 46px rgb(24 51 49 / 9%); translate: 0 -3px; }
+.technology-card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+.technology-index { color: #0d756d; }
+.technology-trace { position: relative; display: inline-flex; align-items: center; gap: 6px; padding-left: 26px; }
+.technology-trace::before { content: ""; position: absolute; left: 0; top: 50%; width: 21px; height: 1px; background: #a7c9bb; }
+.technology-trace i { width: 5px; height: 5px; border-radius: 50%; background: #21a99d; opacity: .35; }
+.technology-card.is-visible .technology-trace i { animation: technology-signal 2.6s ease-in-out infinite; }
+.technology-card.is-visible .technology-trace i:nth-child(2) { animation-delay: .25s; }
+.technology-card.is-visible .technology-trace i:nth-child(3) { animation-delay: .5s; }
+@keyframes technology-signal { 0%, 65%, 100% { opacity: .35; transform: scale(1); } 25% { opacity: 1; transform: scale(1.35); } }
+.technology-card h3 { margin: 0 0 6px; }
+.technology-card > .body-6 { min-height: 40px; margin: 0 0 28px; color: #667970; }
+.technology-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 0; margin: 0; list-style: none; }
+.technology-list li { min-width: 0; display: flex; align-items: center; gap: 11px; padding: 9px 11px; border: 1px solid #e0e9e2; border-radius: 11px; background: #f2f7f3; color: #253e37; font-size: 14px; line-height: 20px; font-weight: 600; }
+.technology-logo { flex: 0 0 39px; width: 39px; height: 39px; display: grid; place-items: center; border-radius: 9px; background: #fff; box-shadow: 0 2px 8px rgb(18 55 47 / 5%); }
+.technology-logo img { width: 25px; height: 25px; object-fit: contain; transition: transform 450ms var(--curve); }
+.technology-list li:hover img { transform: scale(1.13) rotate(-4deg); }
+.technology-note { color: #536c60; margin: 26px 0 0; text-align: right; }
 .service-card { min-height: 320px; padding: 32px; border: 1px solid #454545; background: var(--surface); border-radius: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 500ms var(--curve), background 300ms var(--curve); }
 .service-card:hover { transform: translateY(-4px); background: var(--surface-high); }
 .service-top { display: flex; justify-content: space-between; align-items: start; color: var(--teal); }
@@ -173,12 +200,14 @@ img { max-width: 100%; display: block; }
   .mobile-panel a { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid #455047; font-size: 24px; line-height: 32px; font-weight: 600; transform: translateY(24px); opacity: 0; transition: transform 500ms var(--curve), opacity 500ms var(--curve); }.mobile-panel.is-open a { transform: translateY(0); opacity: 1; }
   .hero { padding-top: 144px; }.hero-inner { grid-template-columns: 1fr; }.hero-copy { max-width: 680px; }.hero-art { max-width: 650px; transform: none; }.hero-footer span:nth-child(2) { display: none; }
   .intro-grid, .section-header { grid-template-columns: 1fr; gap: 8px; }.product-grid, .about-grid, .discussion-grid { gap: 48px; }.faq-grid { grid-template-columns: 1fr; gap: 32px; }
+  .technology-heading { grid-template-columns: 1fr; gap: 8px; }
 }
 @media (max-width: 680px) {
   .container, .nav-shell { width: min(100% - 32px, 1200px); }.nav-shell { padding-left: 12px; }.brand { width: 150px; }
   .hero { min-height: auto; padding-top: 136px; }.hero-inner { padding-bottom: 64px; gap: 48px; }.hero h1 { font-size: 48px; }.hero-description { font-size: 16px; line-height: 24px; }.eyebrow { margin-bottom: 32px; }
   .hero-art { width: 100%; }.art-stage { height: 240px; }.art-symbol { width: 85%; }.art-corner { right: 16px; bottom: 16px; font-size: 12px; line-height: 16px; }.art-steps div { padding: 12px; min-height: 96px; }.art-steps strong { font-size: 12px; }.art-steps small { font-size: 12px; line-height: 16px; }.art-topline { font-size: 10px; }.art-bottom { font-size: 10px; }.hero-footer { font-size: 10px; }
   .intro-section, .services-section, .approach-section, .about-section, .faq-section, .discussion-section, .statement-section { padding: 64px 0; }
+  .technology-section { padding: 64px 0; }.technology-grid { grid-template-columns: 1fr; }.technology-heading { margin-bottom: 32px; }.technology-card { padding: 24px; }.technology-card > .body-6 { min-height: 0; }.technology-note { text-align: left; }
   .heading-2 { font-size: 36px; line-height: 40px; }.heading-3 { font-size: 30px; line-height: 36px; }.section-header { margin-bottom: 32px; }
   .service-grid, .process-grid, .product-grid, .about-grid, .discussion-grid { grid-template-columns: 1fr; }.service-card { min-height: 290px; padding: 24px; }.process-grid { gap: 40px; }.process-number { margin-bottom: 32px; }
   .product-section { padding: 64px 0; }.product-grid { gap: 40px; }.product-visual { min-height: 290px; }.statement-content { grid-template-columns: 1fr; gap: 0; }.statement-copy { margin: 48px 0 32px; }.statement-mark { width: min(52vw, 200px); justify-self: end; margin-bottom: 48px; }.about-visual { min-height: 300px; order: 2; }.about-copy { order: 1; }

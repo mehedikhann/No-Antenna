@@ -12,6 +12,25 @@ const services = [
   ["06", "Animated Content Development", "Animated content that explains products, tells stories, and brings ideas to life.", "Explainers · Brand motion · Digital content"],
 ];
 
+const technologyGroups = [
+  {
+    number: "01", title: "Web & interfaces", detail: "Premium websites and responsive product experiences",
+    tools: [["React", "react"], ["Next.js", "nextdotjs"], ["TypeScript", "typescript"], ["Tailwind CSS", "tailwindcss"]],
+  },
+  {
+    number: "02", title: "Backend & SaaS", detail: "Application logic, data, and dependable delivery",
+    tools: [["Node.js", "nodedotjs"], ["Laravel", "laravel"], ["Python", "python"], ["PostgreSQL", "postgresql"], ["Docker", "docker"]],
+  },
+  {
+    number: "03", title: "Mobile applications", detail: "Cross-platform and native app foundations",
+    tools: [["Flutter", "flutter"], ["React Native", "react"], ["Swift", "swift"], ["Kotlin", "kotlin"]],
+  },
+  {
+    number: "04", title: "Games & animation", detail: "Interactive worlds, real-time visuals, and motion",
+    tools: [["Unity", "unity"], ["Unreal Engine", "unrealengine"], ["Blender", "blender"], ["Rive", "rive"]],
+  },
+];
+
 const faqs = [
   ["What kind of projects can we discuss?", "We work across custom software, SaaS products, premium website development, web and mobile applications, game development, and animated content. If your idea crosses more than one category, share the full context in your request."],
   ["Can you work with a team outside Bangladesh?", "Yes. No Antenna is open to projects from businesses in Bangladesh and international markets. We can discuss a practical communication rhythm for your location and time zone."],
@@ -219,6 +238,28 @@ export default function SiteClient() {
             <div className="service-grid">{services.map(([number, title, description, detail]) => (
               <article className="service-card" key={number} data-reveal><div className="service-top"><span className="caption-3">{number}</span></div><div><h3 className="heading-5">{title}</h3><p className="body-3">{description}</p></div><span className="service-detail caption-2">{detail}</span></article>
             ))}</div>
+          </div>
+        </section>
+
+        <section className="technology-section light-section" aria-labelledby="technology-heading">
+          <div className="container">
+            <div className="technology-heading" data-reveal>
+              <p className="section-label caption-3">TECHNOLOGY STACK / BUILT FOR THE BRIEF</p>
+              <div><h2 id="technology-heading" className="heading-2">The right tools for<br />the right idea.</h2><p className="body-3">From software and SaaS to mobile, games, and motion, the technology should serve the product. Here is a view of modern tools we can consider based on the goals and scope of each project.</p></div>
+            </div>
+            <div className="technology-grid">
+              {technologyGroups.map((group) => (
+                <article className="technology-card" key={group.number} data-reveal>
+                  <div className="technology-card-head"><span className="technology-index caption-3">{group.number} / 04</span><span className="technology-trace" aria-hidden="true"><i /><i /><i /></span></div>
+                  <h3 className="heading-5">{group.title}</h3>
+                  <p className="body-6">{group.detail}</p>
+                  <ul className="technology-list">
+                    {group.tools.map(([name, icon]) => <li key={name}><span className="technology-logo"><img src={`/tech/${icon}.svg`} alt="" width="26" height="26" loading="lazy" /></span><span>{name}</span></li>)}
+                  </ul>
+                </article>
+              ))}
+            </div>
+            <p className="technology-note body-6" data-reveal>Every stack is selected for the product, the people using it, and the long-term plan.</p>
           </div>
         </section>
 
