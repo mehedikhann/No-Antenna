@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export const metadata = { title: "Privacy | No Antenna" };
+export const metadata = { title: "Privacy | No Antenna", alternates: { canonical: "/privacy" } };
 
 export default function Privacy() {
   return <main className="legal-page">

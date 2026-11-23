@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export const metadata = { title: "Terms | No Antenna" };
+export const metadata = { title: "Terms | No Antenna", alternates: { canonical: "/terms" } };
 
 export default function Terms() {
   return <main className="legal-page">
