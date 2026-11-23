@@ -4,9 +4,9 @@ import Link from "next/link";
 const siteUrl = "https://www.noantenna.com";
 const path = "/work/athlo-club";
 
-const title = "Athlo Club: a community sports platform in Dhaka | No Antenna";
+const title = "Athlo Club case study: a sports platform built in 15 days | No Antenna";
 const description =
-  "Athlo Club is a sports platform made by No Antenna. Players in Dhaka find games, host matches, join groups, book venues, and follow community leaderboards.";
+  "How No Antenna designed and built Athlo Club, a community sports platform in Dhaka, in 15 days, with a web app plus Android and iOS apps. Reported results: 10,000+ players, 300+ venues, 100+ matches a week.";
 
 export const metadata: Metadata = {
   title,
@@ -36,10 +36,10 @@ export default function AthloClubCaseStudy() {
       <div className="container">
         <Link className="legal-back button-md" href="/">Back to No Antenna</Link>
         <p className="section-label caption-3">NO ANTENNA / WORK</p>
-        <h1 className="heading-2">Athlo Club: a community sports platform in Dhaka</h1>
+        <h1 className="heading-2">Athlo Club: a sports platform built in 15 days</h1>
         <p className="body-3">
-          Athlo Club is a sports platform made by No Antenna. It helps players in Dhaka find people to play with,
-          host their own games, and book venues. You can see it live at{" "}
+          Athlo Club is a community sports platform in Dhaka, designed and built by No Antenna. It runs as a web app and as Android and iOS apps. Players use it to
+          find games, host their own matches, join groups, and book venues. You can see it live at{" "}
           <a href="https://www.athlo.club/" rel="noopener">athlo.club</a>.
         </p>
 
@@ -50,8 +50,13 @@ export default function AthloClubCaseStudy() {
           built as a community, not only a booking screen.
         </p>
 
-        <h2 className="heading-5">What the platform does</h2>
-        <p className="body-3">The public site, as we reviewed it on 23 November 2026, offers these features:</p>
+        <h2 className="heading-5">What we built</h2>
+        <p className="body-3">
+          No Antenna handled the whole product: the design, the frontend, the backend, and the mobile apps. The
+          first version took 15 days, and Athlo Club launched on 3 July 2026. We used React for the web
+          frontend, Flutter for the Android and iOS apps, and Supabase for the backend.
+        </p>
+        <p className="body-3">The public site offers these features, as we reviewed it on 23 November 2026:</p>
         <ul className="body-3">
           <li>Join a game or host one, and create a group.</li>
           <li>
@@ -70,10 +75,16 @@ export default function AthloClubCaseStudy() {
           <li>Written stories on sport in Bangladesh, and a paid Elite Club membership option.</li>
         </ul>
 
-        <h2 className="heading-5">What this page does not claim</h2>
+        <h2 className="heading-5">Results</h2>
+        <p className="body-3">These figures were reported by No Antenna on 23 November 2026:</p>
+        <ul className="body-3">
+          <li>More than 10,000 players registered.</li>
+          <li>More than 300 venues listed.</li>
+          <li>More than 100 matches hosted each week.</li>
+        </ul>
         <p className="body-3">
-          We have not published user counts, growth figures, or results for Athlo Club here. When we have
-          numbers we can verify, we will add them to this page.
+          These are our own figures and have not been audited by a third party. We do not publish revenue,
+          retention, or other results for Athlo Club here.
         </p>
 
         <h2 className="heading-5">Building something similar</h2>
