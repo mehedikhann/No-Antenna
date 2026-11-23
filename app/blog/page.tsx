@@ -5,6 +5,7 @@ import BlogShell from "./blog-shell";
 export const metadata: Metadata = {
   title: "Blog | No Antenna",
   description: "Practical thinking from No Antenna on custom software, business automation, SaaS, and digital product development.",
+  alternates: { canonical: "/blog" },
 };
 
 export default function BlogPage() {

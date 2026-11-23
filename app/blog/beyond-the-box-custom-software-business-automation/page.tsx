@@ -20,8 +20,23 @@ export const metadata: Metadata = {
   },
 };
 
+const articleUrl = "https://www.noantenna.com/blog/beyond-the-box-custom-software-business-automation";
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: title,
+  description,
+  image: "https://www.noantenna.com/business-automation.jpg",
+  datePublished: "2026-11-16T00:00:00+06:00",
+  mainEntityOfPage: articleUrl,
+  author: { "@type": "Organization", name: "No Antenna", url: "https://www.noantenna.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.noantenna.com/#organization", name: "No Antenna", logo: { "@type": "ImageObject", url: "https://www.noantenna.com/no-antenna-mark.png" } },
+};
+
 export default function ArticlePage() {
   return <BlogShell>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd).replace(/</g, "\\u003c") }} />
     <article className="article-page">
       <header className="article-hero"><div className="container">
         <Link className="article-back caption-1" href="/blog">All insights</Link>
