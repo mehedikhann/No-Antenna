@@ -6,7 +6,7 @@ const path = "/work/athlo-club";
 
 const title = "Athlo Club case study: a sports platform built in 15 days | No Antenna";
 const description =
-  "How No Antenna designed and built Athlo Club, a community sports platform in Dhaka, in 15 days with React and Supabase. Reported results: 10,000+ players, 300+ venues, 100+ matches a week.";
+  "How No Antenna designed and built Athlo Club, a community sports platform in Dhaka, in 15 days, with a web app plus Android and iOS apps. Reported results: 10,000+ players, 300+ venues, 100+ matches a week.";
 
 export const metadata: Metadata = {
   title,
@@ -38,7 +38,7 @@ export default function AthloClubCaseStudy() {
         <p className="section-label caption-3">NO ANTENNA / WORK</p>
         <h1 className="heading-2">Athlo Club: a sports platform built in 15 days</h1>
         <p className="body-3">
-          Athlo Club is a community sports platform in Dhaka, designed and built by No Antenna. Players use it to
+          Athlo Club is a community sports platform in Dhaka, designed and built by No Antenna. It runs as a web app and as Android and iOS apps. Players use it to
           find games, host their own matches, join groups, and book venues. You can see it live at{" "}
           <a href="https://www.athlo.club/" rel="noopener">athlo.club</a>.
         </p>
@@ -52,8 +52,9 @@ export default function AthloClubCaseStudy() {
 
         <h2 className="heading-5">What we built</h2>
         <p className="body-3">
-          No Antenna handled the whole product: the design, the frontend, and the backend. The first version
-          took 15 days. We used React for the frontend and Supabase for the backend.
+          No Antenna handled the whole product: the design, the frontend, the backend, and the mobile apps. The
+          first version took 15 days, and Athlo Club launched on 3 July 2026. We used React for the web
+          frontend, Flutter for the Android and iOS apps, and Supabase for the backend.
         </p>
         <p className="body-3">The public site offers these features, as we reviewed it on 23 November 2026:</p>
         <ul className="body-3">

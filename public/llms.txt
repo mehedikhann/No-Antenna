@@ -14,7 +14,7 @@ For the full list of pages, see the XML sitemap at https://www.noantenna.com/sit
 ## Product
 
 - [Athlo Club](https://www.athlo.club/): a sports platform for players and venues, made by No Antenna.
-- [Athlo Club case study](https://www.noantenna.com/work/athlo-club): No Antenna designed and built Athlo Club, a community sports platform in Dhaka, in 15 days using React and Supabase. Figures reported by No Antenna on 2026-11-23, not audited: 10,000+ players registered, 300+ venues listed, 100+ matches hosted weekly.
+- [Athlo Club case study](https://www.noantenna.com/work/athlo-club): No Antenna designed and built Athlo Club, a community sports platform in Dhaka, in 15 days (launched 2026-07-03) as a web app plus Android and iOS apps, using React, Flutter and Supabase. Figures reported by No Antenna on 2026-11-23, not audited: 10,000+ players registered, 300+ venues listed, 100+ matches hosted weekly.
 
 ## Policies and contact
 
