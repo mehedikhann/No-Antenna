@@ -7,7 +7,7 @@ For the full list of pages, see the XML sitemap at https://www.noantenna.com/sit
 ## Main pages
 
 - [Home](https://www.noantenna.com/): services, technology stack, approach, FAQ, and the form to request a strategic discussion.
-- [Web and mobile app development](https://www.noantenna.com/web-and-mobile-app-development): what No Antenna builds as web and mobile apps; projects typically range from $500 to $10,000 USD, with the same pricing for all clients; common questions.
+- [Web and mobile app development](https://www.noantenna.com/web-and-mobile-app-development): what No Antenna builds as web and mobile apps; projects typically range from $500 to $10,000 USD in two tiers (Starter $500 to $3,000; Full product $3,000 to $10,000), with the same pricing for all clients; common questions.
 - [Blog](https://www.noantenna.com/blog): practical writing on custom software, business automation, and SaaS.
 - [Beyond the Box: Why Custom Software is the Ultimate Engine for Business Automation](https://www.noantenna.com/blog/beyond-the-box-custom-software-business-automation): published 2026-11-16; explains when custom software suits business automation, using an illustrative scenario.
 

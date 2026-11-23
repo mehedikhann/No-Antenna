@@ -15,10 +15,27 @@ export const metadata: Metadata = {
   openGraph: { title, description, url: path, type: "website" },
 };
 
+const tiers = [
+  {
+    name: "Starter",
+    min: 500,
+    max: 3000,
+    label: "$500 to $3,000 USD",
+    text: "A small, focused web or mobile app with a few core features.",
+  },
+  {
+    name: "Full product",
+    min: 3000,
+    max: 10000,
+    label: "$3,000 to $10,000 USD",
+    text: "A multi-feature product, web and mobile together, or an app with integrations.",
+  },
+];
+
 const faqs: [string, string][] = [
   [
     "How much does web and mobile app development cost at No Antenna?",
-    "Projects typically range from $500 to $10,000 USD. Where a project falls in that range depends on its scope. We give a proposal and commercial terms once the scope is understood.",
+    "Projects typically range from $500 to $10,000 USD. Starter projects, such as a small app with a few core features, run from $500 to $3,000. Full products, such as multi-feature apps, web and mobile together, or apps with integrations, run from $3,000 to $10,000. We give a proposal and commercial terms once the scope is understood.",
   ],
   [
     "Do international clients pay different rates?",
@@ -26,7 +43,7 @@ const faqs: [string, string][] = [
   ],
   [
     "What affects the price of an app?",
-    "The number of features and screens, whether you need a web app, a mobile app, or both, integrations with other systems, design needs, and the timeline. A small tool sits near the bottom of the range and a larger multi-feature product sits near the top.",
+    "The number of features and screens, whether you need a web app, a mobile app, or both, integrations with other systems, design needs, and the timeline. Smaller scopes fall in the Starter tier ($500 to $3,000) and larger ones in the Full product tier ($3,000 to $10,000).",
   ],
   [
     "Do I need a complete specification before I ask for a quote?",
@@ -55,6 +72,19 @@ const jsonLd = {
         priceCurrency: "USD",
         lowPrice: 500,
         highPrice: 10000,
+        offerCount: tiers.length,
+        offers: tiers.map((tier) => ({
+          "@type": "Offer",
+          name: tier.name,
+          description: tier.text,
+          priceCurrency: "USD",
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            priceCurrency: "USD",
+            minPrice: tier.min,
+            maxPrice: tier.max,
+          },
+        })),
       },
     },
     {
@@ -87,10 +117,15 @@ export default function WebAndMobileAppDevelopment() {
 
         <h2 className="heading-5">What it costs</h2>
         <p className="body-3">
-          Most projects fall between $500 and $10,000 USD. A small, focused tool sits near the lower end. A
-          larger product with several features and integrations sits near the upper end. Prices are quoted in US
-          dollars, and clients in Bangladesh and abroad pay the same rates.
+          Most projects fall between $500 and $10,000 USD, in two tiers. Prices are quoted in US dollars, and
+          clients in Bangladesh and abroad pay the same rates.
         </p>
+        {tiers.map((tier) => (
+          <div key={tier.name}>
+            <h3 className="title-2">{tier.name}: {tier.label}</h3>
+            <p className="body-3">{tier.text}</p>
+          </div>
+        ))}
         <p className="body-3">
           We give a proposal and commercial terms once we understand your scope, so the number you receive is
           based on your project and not on a generic price list.
