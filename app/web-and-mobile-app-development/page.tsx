@@ -25,9 +25,9 @@ const tiers = [
   },
   {
     name: "Full product",
-    min: 3000,
+    min: 3001,
     max: 10000,
-    label: "$3,000 to $10,000 USD",
+    label: "$3,001 to $10,000 USD",
     text: "A multi-feature product, web and mobile together, or an app with integrations.",
   },
 ];
@@ -35,7 +35,7 @@ const tiers = [
 const faqs: [string, string][] = [
   [
     "How much does web and mobile app development cost at No Antenna?",
-    "Projects typically range from $500 to $10,000 USD. Starter projects, such as a small app with a few core features, run from $500 to $3,000. Full products, such as multi-feature apps, web and mobile together, or apps with integrations, run from $3,000 to $10,000. We give a proposal and commercial terms once the scope is understood.",
+    "Projects typically range from $500 to $10,000 USD. Starter projects, such as a small app with a few core features, run from $500 to $3,000. Full products, such as multi-feature apps, web and mobile together, or apps with integrations, run from $3,001 to $10,000. We give a proposal and commercial terms once the scope is understood.",
   ],
   [
     "Do international clients pay different rates?",
@@ -43,7 +43,7 @@ const faqs: [string, string][] = [
   ],
   [
     "What affects the price of an app?",
-    "The number of features and screens, whether you need a web app, a mobile app, or both, integrations with other systems, design needs, and the timeline. Smaller scopes fall in the Starter tier ($500 to $3,000) and larger ones in the Full product tier ($3,000 to $10,000).",
+    "The number of features and screens, whether you need a web app, a mobile app, or both, integrations with other systems, design needs, and the timeline. Smaller scopes fall in the Starter tier ($500 to $3,000) and larger ones in the Full product tier ($3,001 to $10,000).",
   ],
   [
     "Do I need a complete specification before I ask for a quote?",
