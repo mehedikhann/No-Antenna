@@ -39,7 +39,6 @@ export const metadata: Metadata = {
   title: "No Antenna | Custom Software, SaaS, Websites and Apps",
   description: "No Antenna develops custom software, SaaS products, premium websites, web and mobile apps, games, and animated content for businesses in Bangladesh and beyond.",
   openGraph: {
-    url: "/",
     siteName: "No Antenna",
     locale: "en",
     title: "No Antenna | Software built for what comes next",
