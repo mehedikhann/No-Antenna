@@ -109,7 +109,7 @@ export default function WebAndMobileAppDevelopment() {
           Flutter, React Native, Swift, and Kotlin. The tools depend on the goals and scope of each project.
         </p>
         <p className="body-3">
-          An example of our own product work is <a href="https://www.athlo.club/" rel="noopener">Athlo Club</a>,
+          An example of our own product work is <Link href="/work/athlo-club">Athlo Club</Link>,
           a sports platform for players and venues, made by No Antenna.
         </p>
 

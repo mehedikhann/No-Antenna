@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${siteUrl}/` },
     { url: `${siteUrl}/web-and-mobile-app-development` },
+    { url: `${siteUrl}/work/athlo-club` },
     { url: `${siteUrl}/blog` },
     { url: `${siteUrl}/blog/beyond-the-box-custom-software-business-automation`, lastModified: "2026-11-16" },
     { url: `${siteUrl}/privacy` },
