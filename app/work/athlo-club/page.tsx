@@ -75,8 +75,8 @@ export default function AthloClubCaseStudy() {
           <li>Written stories on sport in Bangladesh, and a paid Elite Club membership option.</li>
         </ul>
 
-        <h2 className="heading-5">Results</h2>
-        <p className="body-3">These figures were reported by No Antenna on 23 November 2026:</p>
+        <h2 className="heading-5">Results as of 23 November 2026</h2>
+        <p className="body-3">These were the figures reported by No Antenna on 23 November 2026:</p>
         <ul className="body-3">
           <li>More than 10,000 players registered.</li>
           <li>More than 300 venues listed.</li>

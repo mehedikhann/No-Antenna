@@ -51,12 +51,23 @@ export default function SiteClient() {
 
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
+    // Show the brand intro once per browser session, and skip it for reduced motion.
+    let seen = false;
+    try {
+      seen = window.sessionStorage.getItem("na-intro-seen") === "1";
+      window.sessionStorage.setItem("na-intro-seen", "1");
+    } catch {}
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (seen || reduceMotion) {
+      setIntroStage("done");
+      return;
+    }
     document.body.style.overflow = "hidden";
-    const exitTimer = window.setTimeout(() => setIntroStage("exiting"), 4250);
+    const exitTimer = window.setTimeout(() => setIntroStage("exiting"), 1800);
     const doneTimer = window.setTimeout(() => {
       setIntroStage("done");
       document.body.style.overflow = previousOverflow;
-    }, 5000);
+    }, 2500);
     return () => {
       window.clearTimeout(exitTimer);
       window.clearTimeout(doneTimer);
@@ -236,7 +247,7 @@ export default function SiteClient() {
         <section className="services-section" id="services" aria-labelledby="services-heading">
           <div className="container"><div className="section-header" data-reveal><div className="section-identity"><span className="section-icon build-icon" aria-hidden="true"><BracketsCurly size={32} weight="duotone" /></span><p className="section-label caption-3">02 / WHAT WE BUILD</p></div><div><h2 id="services-heading" className="heading-2">The right product for<br />the work ahead.</h2><p className="body-3">Six focused services, connected by one idea: the work should make a meaningful difference to the people using it.</p></div></div>
             <div className="service-grid">{services.map(([number, title, description, detail]) => (
-              <article className="service-card" key={number} data-reveal><div className="service-top"><span className="caption-3">{number}</span></div><div><h3 className="heading-5">{title}</h3><p className="body-3">{description}</p></div><span className="service-detail caption-2">{detail}</span></article>
+              <article className="service-card" key={number} data-reveal><div className="service-top"><span className="caption-3">{number}</span></div><div><h3 className="heading-5">{title}</h3><p className="body-3">{description}</p></div><span className="service-detail caption-2">{detail}</span>{number === "04" && <a className="text-link button-md" href="/web-and-mobile-app-development">See pricing and details</a>}</article>
             ))}</div>
           </div>
         </section>
@@ -265,7 +276,7 @@ export default function SiteClient() {
 
         <section className="product-section" id="product" aria-labelledby="product-heading">
           <div className="container product-grid">
-            <div className="product-copy" data-reveal><p className="section-label caption-3">03 / OUR PRODUCT</p><p className="product-tag caption-3">FROM NO ANTENNA</p><h2 id="product-heading" className="heading-2">Meet Athlo Club.</h2><p className="body-3">Our sports platform brings players and venues closer to the game. It is one example of how we turn a focused idea into a digital product of our own.</p><a className="product-link button-md" href="https://www.athlo.club/" target="_blank" rel="noopener noreferrer">Explore Athlo Club</a></div>
+            <div className="product-copy" data-reveal><p className="section-label caption-3">03 / OUR PRODUCT</p><p className="product-tag caption-3">FROM NO ANTENNA</p><h2 id="product-heading" className="heading-2">Meet Athlo Club.</h2><p className="body-3">Our sports platform brings players and venues closer to the game. It is one example of how we turn a focused idea into a digital product of our own.</p><a className="product-link button-md" href="https://www.athlo.club/" target="_blank" rel="noopener noreferrer">Explore Athlo Club</a> <a className="text-link button-md" href="/work/athlo-club">Read the case study</a></div>
             <div className="product-visual" data-reveal>
               <span className="caption-3">FEATURED PRODUCT / 001</span>
               <a className="athlo-feature" href="https://www.athlo.club/" target="_blank" rel="noopener noreferrer" aria-label="Visit www.athlo.club">
