@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
   title: "No Antenna | Custom Software, SaaS, Websites and Apps",
-  description: "No Antenna develops custom software, SaaS products, premium websites, web and mobile apps, games, and animated content, and offers staff augmentation for businesses in Bangladesh and beyond.",
+  description: "No Antenna builds custom software, SaaS, websites, web and mobile apps, games and animation, with staff augmentation for clients worldwide.",
   openGraph: {
     siteName: "No Antenna",
     locale: "en",
@@ -55,6 +55,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
+    apple: "/no-antenna-mark.png",
   },
 };
 

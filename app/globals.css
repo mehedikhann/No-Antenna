@@ -225,7 +225,6 @@ img { max-width: 100%; display: block; }
 .site-intro { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; background: #181818; color: var(--white); pointer-events: auto; opacity: 1; visibility: visible; transition: opacity 750ms var(--curve), visibility 750ms var(--curve); animation: intro-failsafe 750ms var(--curve) 2500ms forwards; }
 .site-intro.is-exiting { opacity: 0; visibility: hidden; }
 @keyframes intro-failsafe { to { opacity: 0; visibility: hidden; pointer-events: none; } }
-.route-loading { min-height: 100vh; display: grid; place-items: center; background: #181818; color: var(--white); }
 .intro-content { width: min(100% - 48px, 520px); text-align: center; opacity: 1; transform: translateY(0) scale(1); transition: opacity 650ms var(--curve), transform 750ms var(--curve); }
 .site-intro.is-exiting .intro-content { opacity: 0; transform: translateY(-8px) scale(.99); }
 .intro-overline { margin: 0 0 48px; color: #aebdb3; opacity: 0; animation: intro-rise 650ms var(--curve) 100ms forwards; }
