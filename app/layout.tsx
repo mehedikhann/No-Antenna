@@ -13,7 +13,7 @@ const organizationJsonLd = {
       name: "No Antenna",
       url: siteUrl,
       logo: `${siteUrl}/no-antenna-mark.png`,
-      description: "No Antenna develops custom software, SaaS products, premium websites, web and mobile apps, games, and animated content for businesses in Bangladesh and beyond.",
+      description: "No Antenna develops custom software, SaaS products, premium websites, web and mobile apps, games, and animated content, and offers staff augmentation for businesses in Bangladesh and beyond.",
       email: "contact@noantenna.com",
       sameAs: [
         "https://www.linkedin.com/company/noantenna/",
@@ -37,19 +37,19 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
   title: "No Antenna | Custom Software, SaaS, Websites and Apps",
-  description: "No Antenna develops custom software, SaaS products, premium websites, web and mobile apps, games, and animated content for businesses in Bangladesh and beyond.",
+  description: "No Antenna develops custom software, SaaS products, premium websites, web and mobile apps, games, and animated content, and offers staff augmentation for businesses in Bangladesh and beyond.",
   openGraph: {
     siteName: "No Antenna",
     locale: "en",
     title: "No Antenna | Software built for what comes next",
-    description: "Custom software, SaaS, premium websites, web and mobile applications, game development, and animated content.",
+    description: "Custom software, SaaS, premium websites, web and mobile applications, game development, animated content, and staff augmentation.",
     type: "website",
     images: ["/og-image.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "No Antenna | Custom Software, SaaS, Websites and Apps",
-    description: "Custom software, SaaS, premium websites, web and mobile applications, game development, and animated content.",
+    description: "Custom software, SaaS, premium websites, web and mobile applications, game development, animated content, and staff augmentation.",
     images: ["/og-image.png"],
   },
   icons: {

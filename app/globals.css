@@ -126,6 +126,8 @@ img { max-width: 100%; display: block; }
 .technology-note { color: #536c60; margin: 26px 0 0; text-align: right; }
 .service-card { min-height: 320px; padding: 32px; border: 1px solid #454545; background: var(--surface); border-radius: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 500ms var(--curve), background 300ms var(--curve); }
 .service-card:hover { transform: translateY(-4px); background: var(--surface-high); }
+.service-card:last-child:nth-child(odd) { grid-column: 1 / -1; min-height: 250px; }
+.service-card:last-child:nth-child(odd) p { max-width: 680px; }
 .service-top { display: flex; justify-content: space-between; align-items: start; color: var(--teal); }
 .service-card h3 { margin: 0 0 16px; }.service-card p { color: #b8c2ba; max-width: 420px; margin: 0; }
 .service-detail { color: #8a978e; padding-top: 24px; border-top: 1px solid #454545; }
@@ -209,7 +211,7 @@ img { max-width: 100%; display: block; }
   .intro-section, .services-section, .approach-section, .about-section, .faq-section, .discussion-section, .statement-section { padding: 64px 0; }
   .technology-section { padding: 64px 0; }.technology-grid { grid-template-columns: 1fr; }.technology-heading { margin-bottom: 32px; }.technology-card { padding: 24px; }.technology-card > .body-6 { min-height: 0; }.technology-note { text-align: left; }
   .heading-2 { font-size: 36px; line-height: 40px; }.heading-3 { font-size: 30px; line-height: 36px; }.section-header { margin-bottom: 32px; }
-  .service-grid, .process-grid, .product-grid, .about-grid, .discussion-grid { grid-template-columns: 1fr; }.service-card { min-height: 290px; padding: 24px; }.process-grid { gap: 40px; }.process-number { margin-bottom: 32px; }
+  .service-grid, .process-grid, .product-grid, .about-grid, .discussion-grid { grid-template-columns: 1fr; }.service-card, .service-card:last-child:nth-child(odd) { min-height: 290px; padding: 24px; grid-column: auto; }.process-grid { gap: 40px; }.process-number { margin-bottom: 32px; }
   .product-section { padding: 64px 0; }.product-grid { gap: 40px; }.product-visual { min-height: 290px; }.statement-content { grid-template-columns: 1fr; gap: 0; }.statement-copy { margin: 48px 0 32px; }.statement-mark { width: min(52vw, 200px); justify-self: end; margin-bottom: 48px; }.about-visual { min-height: 300px; order: 2; }.about-copy { order: 1; }
   .form-card { padding: 24px; }.form-row { grid-template-columns: 1fr; }.contact-box { margin-top: 40px; }.footer-top, .footer-bottom { flex-direction: column; }.footer-contact { align-items: flex-start; }.footer-top { padding-bottom: 48px; }.footer-bottom div { flex-wrap: wrap; }
 }
